@@ -1,5 +1,5 @@
-server/*
-mpApp/*
-server/node_modules/*
-smiledemo/node_modules/*
+/server/*
+/mpApp/*
+/server/node_modules/*
+/smiledemo/node_modules/*
 .gitignore

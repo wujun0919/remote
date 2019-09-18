@@ -48,12 +48,14 @@
             </div>
         </div>
     
-    </div>
-  
+        <!---楼层------>
+        <floor-component :floorData="floor1"></floor-component>
     
+    </div>
 </template>
 
 <script>
+    import FloorComponent from "../components/component/FloorComponent";
     import { swiper,swiperSlide } from "vue-awesome-swiper";
     import "swiper/dist/css/swiper.css"
     import axios from "axios";
@@ -67,10 +69,11 @@
                bannerPicArray:[],
                 category:[],
                 adBanner:"",
-                recommendGoods:[]
+                recommendGoods:[],
+                floor1:[]
            }
        },
-        components:{swiper,swiperSlide},
+        components:{swiper,swiperSlide,FloorComponent},
        created(){
            axios({
                url:"https://api.myjson.com/bins/uak5d",
@@ -82,6 +85,7 @@
                    this.adBanner=res.data.data.advertesPicture.PICTURE_ADDRESS
                    this.bannerPicArray=res.data.data.slides
                    this.recommendGoods=res.data.data.recommend
+                   this.floor1=res.data.data.floor1
                }
                
            }).catch(error=>console.log(error))

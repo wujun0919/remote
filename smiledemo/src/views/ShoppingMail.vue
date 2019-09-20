@@ -41,7 +41,7 @@
                        
                             <img :src="item.image" alt="" width="80%">
                             <div>{{item.goodsName}}</div>
-                            <div>${{item.price}}(${{item.mallPrice}})</div>
+                            <div>${{item.price | moneyFilter}}(${{item.mallPrice | moneyFilter}})</div>
                       
                     </swiper-slide>
                 </swiper>
@@ -49,12 +49,15 @@
         </div>
     
         <!---楼层------>
-        <floor-component :floorData="floor1"></floor-component>
+        <floor-component :floorData="floor1" :floorTitle="floorName.floor1"></floor-component>
+        <floor-component :floorData="floor2" :floorTitle="floorName.floor2"></floor-component>
+        <floor-component :floorData="floor3" :floorTitle="floorName.floor3"></floor-component>
     
     </div>
 </template>
 
 <script>
+    import { toMoney } from "../filter/moneyFilter";
     import FloorComponent from "../components/component/FloorComponent";
     import { swiper,swiperSlide } from "vue-awesome-swiper";
     import "swiper/dist/css/swiper.css"
@@ -70,7 +73,15 @@
                 category:[],
                 adBanner:"",
                 recommendGoods:[],
-                floor1:[]
+                floor1:[],
+                floor2:[],
+                floor3:[],
+                floorName:{}
+           }
+       },
+       filters:{
+           moneyFilter(money){
+               return toMoney(money)
            }
        },
         components:{swiper,swiperSlide,FloorComponent},
@@ -86,6 +97,9 @@
                    this.bannerPicArray=res.data.data.slides
                    this.recommendGoods=res.data.data.recommend
                    this.floor1=res.data.data.floor1
+                   this.floor2=res.data.data.floor2
+                   this.floor3=res.data.data.floor3
+                   this.floorName=res.data.data.floorName
                }
                
            }).catch(error=>console.log(error))

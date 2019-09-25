@@ -52,13 +52,35 @@
         <floor-component :floorData="floor1" :floorTitle="floorName.floor1"></floor-component>
         <floor-component :floorData="floor2" :floorTitle="floorName.floor2"></floor-component>
         <floor-component :floorData="floor3" :floorTitle="floorName.floor3"></floor-component>
+
+        <!--Hot Area-->
+        <div class="hot-area">
+            <div class="hot-title">热卖商品</div>
+            <div class="hot-goods">
+            <!--这里需要一个list组件-->
+                <van-list>
+                    <van-row gutter="20">
+                        <van-col span="12" v-for="(item,index) in hotGoods" :key="index">
+                            <goods-info 
+                                :goodsImage="item.image"
+                                :goodsName="item.image"
+                                :goodsPrice="item.price"></goods-info>
+                        </van-col>
+                    </van-row>
+                </van-list>
+            </div>
+        </div>
     
+    
+    <!----底层非常好，勿动-------------->
     </div>
 </template>
 
 <script>
+    import {url} from "@/serviceApi.config.js";
     import { toMoney } from "../filter/moneyFilter";
     import FloorComponent from "../components/component/FloorComponent";
+    import goodsInfo from "../components/component/goodsInfoComponent";
     import { swiper,swiperSlide } from "vue-awesome-swiper";
     import "swiper/dist/css/swiper.css"
     import axios from "axios";
@@ -76,7 +98,8 @@
                 floor1:[],
                 floor2:[],
                 floor3:[],
-                floorName:{}
+                floorName:{},
+                hotGoods:[]
            }
        },
        filters:{
@@ -84,10 +107,10 @@
                return toMoney(money)
            }
        },
-        components:{swiper,swiperSlide,FloorComponent},
+        components:{swiper,swiperSlide,FloorComponent,goodsInfo},
        created(){
            axios({
-               url:"https://api.myjson.com/bins/uak5d",
+               url:url.getShoppingMailInfo,
                method:"get"
            }).then((res)=>{
                console.log(res)
@@ -100,6 +123,7 @@
                    this.floor2=res.data.data.floor2
                    this.floor3=res.data.data.floor3
                    this.floorName=res.data.data.floorName
+                   this.hotGoods=res.data.data.hotGoods
                }
                
            }).catch(error=>console.log(error))
@@ -170,4 +194,10 @@
         font-size: 12px;
         text-align: center
     }
+    .hot-area{
+      text-align: center;
+      font-size:14px;
+      height: 1.8rem;
+      line-height:1.8rem;
+  }
 </style>

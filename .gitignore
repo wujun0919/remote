@@ -2,4 +2,5 @@
 /mpApp/*
 /server/node_modules/*
 /smiledemo/node_modules/*
+/smiledemo/service/node_modules/*
 .gitignore

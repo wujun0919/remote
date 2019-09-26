@@ -1,10 +1,12 @@
 const Koa=require("koa")
+const app=new Koa();
+const Router=require("koa-router")
+const router=new Router()
 const {connect,initSchemas}=require("./database/init")
 const mongoose=require("mongoose")
-const router=require("koa-router")()
-let user=require("./appApi/user")
 const bodyParser=require("koa-bodyparser")
-const app=new Koa();
+
+let user=require("./appApi/user")
 
 app.use(bodyParser())
 // (async ()=>{
@@ -18,15 +20,13 @@ app.use(bodyParser())
 //     })
 // })()
 
-// app.use(async(ctx,next)=>{
-//     ctx.body="<h1>hello koa2</h1>"
-//     next()
-// })
-
+router.get("/",async(ctx) => {
+    ctx.body="hello koa"
+})
 router.use("/user",user)
 
 app.use(router.routes())
 app.listen(80,()=>{
-    console.log('[server] starting at port 3000');
+    console.log('[server] starting at port 80');
     
 })

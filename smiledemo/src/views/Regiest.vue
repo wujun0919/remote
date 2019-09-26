@@ -26,13 +26,14 @@
          >
          </van-field>
             <div class="register-button">
-                <van-button type="primary" size="large">马上注册</van-button>
+                <van-button type="primary" size="large" @click="axiosRegiestUser">马上注册</van-button>
             </div>
          </div>
     </div>
 </template>
 
 <script>
+    import axios from "axios";
     export default {
         data() {
             return {
@@ -43,6 +44,16 @@
         methods: {
             goBack() {
                 this.$router.go(-1)
+            },
+            axiosRegiestUser(){
+                axios({
+                    url:"/api",
+                    method:"post",
+                    data:{
+                        username:this.username,
+                        password:this.password
+                    }
+                })
             }
         },
     }

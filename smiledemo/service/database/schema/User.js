@@ -13,11 +13,22 @@ const userSchema=new Schema({
     }},
     createAt:{type:Date,default:Date.now()},
     lastLoginAt:{type:Date,default:Date.now()}
-})
+},{collection:"user"})
 
-// userSchema.pre("save",(next)=>{
-//     md5(this.password)
-//     next()
-// })
+userSchema.methods={
+    comparePassword:(_password,password)=>{
+        return new Promise((resolve,reject) => {
+            let isOk=true
+            if (md5(_password)==password) {
+                isOk=true
+            }else{
+                isOk=false
+            }
+            resolve(isOk)
+        })
+    }
+}
+
+
 
 mongoose.model("User",userSchema)

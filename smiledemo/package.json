@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "dev": "nodemon ./service/index.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -19,6 +20,7 @@
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "babel-plugin-import": "^1.12.1",
+    "nodemon": "^1.19.2",
     "vue-template-compiler": "^2.6.10"
   },
   "postcss": {

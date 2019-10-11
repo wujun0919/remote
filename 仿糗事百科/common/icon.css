@@ -1,0 +1,34 @@
+@font-face {font-family: "iconfont";
+  src:url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAWUAAsAAAAACtwAAAVIAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDOAqIXIcDATYCJAMYCw4ABCAFhG0HWRsqCRFVpK+QfYVxC08CiNZinGokArVOhEXcwOOMRwuqhQYDAAAAIHv0j5qX5GdBuFqfjKKDu6vMqbqsJ1AHmtnYPLL3FYB8Xd0T8u2X7Y7S3QkTobbJszRf/Zb3S8tOfmjjcRqlEBKEowECCMja7CAOJIoxjCiwQBMLvC3w8+jxEzD2///fb1ZEI4dQ9OKNXuzxcU+iljh0b7KQFpqIRitldQu5rPdpiFd7A5nNLzwOBEAd1uRgicmZhVCFgHscAaDOtpY6qFYcEAMMgqpZdlwqQOuAAlW2SLEKYG3y+/QB/qkCDAqHe2puc1IjYl8XoZLQfyojHEDr+QDIVwEcgCcAAVBnZ6AZPNN5Jgb1rmKBcACq3l4MeF2CclT+BUqR+lp8qtCkf3kAgYFDQAFIwjVoEjlTr9w1FEiBgNfF6L4ibgO3jOVcCgJ4XdkHBQAgV+zWA2gAoINk8VzfIJ7g24SjUHR1PfzUNLWshKO3lqHhCEzJA5jNZWBgoQjjUj5Gqc7B5gog1DH1nVBIDCjSpNDitSOx/hHVvyH20KxEK19TF+qUatNvmBtq7j7NkomRBfEOweZ2codsuULt/PId6VcrbMUGUtQL24ZSJLeKaltRm3ipXKtUffJgK3fvrkZx+3Cy2PC+QEMHuV2iQrFDt25gpMP76AR5PHkUjSnPP7OvObCc27Or3I2kgLSVBDfjAPLi2tDcfILYws6KLMDD8/I4OTflEgZstvGKzm4mPCGm3lKyNQXHNyNON/dQhHNTMuHhJkJsIZM8PXSkvkzk8D62XboIoF2tPm3oArFNhMSzJ4VAaxmX3lx4g+Tu/U22kg6eV/Ru8oGyrZQVxPZsexcUNzMk1655z/x6huRGhONFHnsnNFOkW2DfGn+p1EZ7eBDNGYHraBNpWQOb0tdQN8ld330b9EwnPLhCMUdp0vfCx2gTDQvrjlEnkwqq3wWsGMRJ5k7+2GloviqLvBr5nu7jcsMHy98hWf1I2QZZ8ye9/R6WCpUPB/PPT/re4vl8ohafijvreSlF6bVG+o/6+g2l0Jd6UDPdu2sqcYoKee2xO9WSbI+YtOj4vEoIv9YH4boRXkn4JIiLowDHRge9Tv2aXmEbfWZzJn1bov63W3rd43rebJcaX4Kvfl4e85oyqpXuPpWAxFkCdP7rOGj/MTQUhP81m4lMZif4NA828/fFOSQmkSClZVPg+u3cCnS0XJ3iOd8pv2R/qRMSIp87bZQrx6lb0KrpFwepvb8Xd3GCjkmIXer7+u3KlUUMWurbPRejr188uzzOprrQPPWTRZyVOdQtEChStbVfjGH/Ym1evrRR0mYoaW1qMogIqnewAJNww9yX3UuYgez+U9pYLwDAfrIpAODxbOs3fRhGY1UTAnX0fqlq/M3XXs4V0SObgBn9MBGMfsEIHBMW5jrljNGBCgpJfZ9+kgHUPTfw280D+v7WMhnB1QBRZVQAo8IKOFWOeEH2BIWGQJBUxYA6D/dXazAgDtHUALj7YkB0fQOj7S5wun7wgvwLCmP/IOl2COqK291Sg3P+4lowKhaaPsnPXIzv1ou09gH2NY1SxhLWC6T6GPXevvXcPQpkjTPqmx1UDRnhTHfsaUiJaRUOmLVxquu+9Wnu+qRm5ry5kEDASMGCTD4Rb8YKE61WF42ffwDWq2QkAyNN2RcgKr970mt0AP7eUKCRZ2mu3lgDpaRBjFzNMnJHPkhempG1+6AAZqrhZiRXey1NMqih2d+UX+UdAOrc95Yx4iRIIUkqkEeC4qxC1RdbjxxnHM+JK64EadRHVFKdXzcb') format('woff2'),
+  url('./static/uni.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-delete:before {
+  content: "\e699";
+}
+
+.icon-settings:before {
+  content: "\e69a";
+}
+
+.icon-home:before {
+  content: "\e69b";
+}
+
+.icon-close:before {
+  content: "\e69e";
+}
+
+.icon-relationship:before {
+  content: "\e6a0";
+}
+
+
